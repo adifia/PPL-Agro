@@ -36,6 +36,11 @@ Route::post('/simpan-data/{id}', 'Admin\PelangganController@simpan')->name('simp
 
 Route::get('/coba', 'Admin\PelangganController@coba')->name('coba');
 
+
+Route::get('data-kurir', 'Admin\KurirController@index')->name('data-kurir');
+Route::get('tambah-kurir', 'Admin\KurirController@tambah')->name('tambah-kurir');
+Route::post('simpan-kurir', 'Admin\KurirController@simpan')->name('simpan-kurir');
+
 Route::get('/stok', 'Admin\StokController@index')->name('data-stok');
 Route::get('/tambah-stok', 'Admin\StokController@tambah')->name('tambah-stok');
 Route::post('/simpan-stok', 'Admin\StokController@simpan')->name('simpan-stok');
@@ -47,6 +52,7 @@ Route::get('/data-pesanan', 'Admin\PesananController@index')->name('data-pesanan
 Route::get('/verif-pesanan/{id}', 'Admin\PesananController@verif1')->name('verif1');
 Route::get('/verif-pembayaran/{id}', 'Admin\PesananController@verif2')->name('verif2');
 Route::get('/tolak-pesanan/{id}', 'Admin\PesananController@tolak')->name('tolak');
+Route::get('/alasan-penolakan/{id}', 'Admin\PesananController@alasan_tolak')->name('alasan-tolak');
 Route::get('/alasan-pembatalan/{id}', 'Admin\PesananController@alasan')->name('alasan');
 Route::get('/batal-pesanan/{id}', 'Admin\PesananController@batal')->name('batal');
 

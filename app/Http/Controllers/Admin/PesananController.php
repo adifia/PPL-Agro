@@ -37,9 +37,18 @@ class PesananController extends Controller
 		return redirect('/data-pesanan');
 	}
 
+	public function alasan_tolak($id)
+	{
+		return view('adminAlasanPenolakan', [
+			'id' => $id
+		]);
+	}
+
+
 	public function tolak(Request $request,$id)
 	{
 		$pesanan=Pesanan::find($id);
+		$pesanan->alasan = $request->alasan;
 		$pesanan->status = 'Ditolak';
 		$pesanan->save();
 		return redirect('/data-pesanan');

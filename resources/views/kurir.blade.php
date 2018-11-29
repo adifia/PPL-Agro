@@ -55,6 +55,7 @@
 
                                     <td>@if($pes->status == 'Dalam pengiriman')
                                         <a class="btn btn-success" href="{{ route('diterima', $pes->id) }}" style="">Diterima</a>
+                                        
                                         @endif
                                     </td>
                                 </tr>

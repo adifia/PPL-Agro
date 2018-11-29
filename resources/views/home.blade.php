@@ -7,7 +7,10 @@
         <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action">
-                    Data User
+                    Data Pelanggan
+                </a>
+                <a href="{{ route('data-kurir') }}" class="list-group-item list-group-item-action">
+                    Data Kurir
                 </a>
                 <a href="{{ route('data-stok') }}" class="list-group-item list-group-item-action">Stok</a>
                 <a href="{{ route('data-pesanan') }}" class="list-group-item list-group-item-action">Pesanan</a>

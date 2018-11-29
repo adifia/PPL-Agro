@@ -10,10 +10,10 @@ class PelangganController extends Controller
 {
     public function index()
     {
-    	$user = User::paginate(5);
+    	$user = User::where('role', '=', 'pelanggan')->paginate(5);
     	return view('adminDataPelanggan', [
     		'user' => $user
-    		]);
+        ]);
     }
 
     public function detail($id)
@@ -50,6 +50,6 @@ class PelangganController extends Controller
         $user = User::paginate(5);
         return view('pelanggan.index', [
             'user' => $user
-            ]);
+        ]);
     }
 }

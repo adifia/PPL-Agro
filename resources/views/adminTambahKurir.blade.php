@@ -1,0 +1,60 @@
+@extends('layouts.app')
+
+@section('content')
+{{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Data kurir</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+
+                    Tambah Data Kurir
+
+                    <form method="post" action="{{ route('simpan-kurir')}}">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" placeholder="Nama">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" aria-describedby="emailHelp" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis kelamin</label><br>
+                            <input type="radio" name="jeniskelamin" id="lk" value="laki-laki">Laki-Laki
+                            <input type="radio" name="jeniskelamin" id="pr" value="perempuan">Perempuan
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Alamat</label>
+                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="-">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">No HP</label>
+                            <input type="number" class="form-control" id="nohp" name="nohp" aria-describedby="emailHelp" placeholder="-">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" value="save">Simpan</button>
+                        {{ csrf_field() }}
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@endsection
