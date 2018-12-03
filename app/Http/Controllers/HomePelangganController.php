@@ -17,11 +17,20 @@ class HomePelangganController extends Controller
 
     public function kurir()
     {
-    	$pesanan = Pesanan::where('status', '=', 'Dalam pengiriman')->get();
+    	$pesanan = Pesanan::where('status', '=', 'Dalam pengiriman')->orderBy('updated_at', 'desc')->get();
     	return view('kurir', [
     		'pesanan' => $pesanan
     	]);
     }
+
+    public function pemilik()
+    {
+    	$pesanan = Pesanan::where('status', '=', 'Diterima')->orderBy('updated_at', 'desc')->get();
+    	return view('home-pemilik', [
+    		'pesanan' => $pesanan
+    	]);
+    }
+
 
     
 }

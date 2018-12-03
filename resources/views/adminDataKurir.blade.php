@@ -49,7 +49,7 @@
                                 <td>{{$u->noHp}}</td>
                                 <td>{{$u->role}}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="" style=" color: white;">Detail</a>
+                                    <a class="btn btn-primary" href="{{ route('detail-kurir', $u->id) }}" style=" color: white;">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

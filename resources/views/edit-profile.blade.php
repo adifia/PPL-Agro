@@ -31,10 +31,29 @@
                         <input  @if(Auth::user()->jenisKelamin=='laki-laki') checked="checked" @endif type="radio" name="jeniskelamin" id="lk" value="laki-laki">Laki-Laki
                         <input @if(Auth::user()->jenisKelamin=='perempuan') checked="checked" @endif type="radio" name="jeniskelamin" id="pr" value="perempuan">Perempuan
                         <br><br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="exampleInputEmail1">Kabupaten</label>
+                                <select name="kabupaten" id="kabupaten" class="form-control" onchange="panggil_kecamatan(event,this)">
+                                <option value=""></option>
+                                 @foreach ($kabupaten as $kab)
+                                 <option value="{{$kab->id}}">{{$kab->kabupaten}}</option>
+                                 @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="exampleInputEmail1">Kecamatan</label>
+                                <select name="kecamatan" id="kecamatan" class="form-control">
+                                </select>
+                            </div>
+                        </div><br>
+
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Alamat</label>
+                            <label for="exampleInputEmail1">Alamat (Desa dan alamat lengkap)</label>
                             <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->alamat}}">
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">No HP</label>
                             <input type="number" class="form-control" id="nohp" name="nohp" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->noHp}}">
@@ -50,3 +69,19 @@
     </div>
 </div>
 @endsection
+@push('script')
+    <script>
+        function panggil_kecamatan(e, element){
+            $.ajax({
+                url:'{{url('/get-kecamatan')}}/'+$(element).val(),
+                success: function(respons){
+                    var html = '';
+                    for(var i of respons){
+                        html+='<option value="'+i.id+'">'+i.kecamatan+'</option>' 
+                    }
+                    $('#kecamatan').html(html);
+                }
+            })
+        }
+    </script>
+@endpush

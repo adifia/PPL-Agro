@@ -24,6 +24,7 @@ class StokController extends Controller
     {
     	$stok = new Stok();
     	$stok->ukuran = $request->ukuran;
+        $stok->keterangan = $request->keterangan;
     	$stok->harga = $request->harga;
     	$stok->jumlah = $request->jumlah;
     	$stok->save();
@@ -40,6 +41,7 @@ class StokController extends Controller
     {
         $stok = Stok::find($id);
         $stok->ukuran = $request->ukuran;
+        $stok->keterangan = $request->keterangan;
         $stok->harga = $request->harga;
         $stok->jumlah = $request->jumlah;
         $stok->save();

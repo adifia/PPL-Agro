@@ -29,6 +29,7 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Ukuran</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Harga</th>
                                 <th scope="col">Jumlah</th>
                                 <th scope="col">Aksi</th>
@@ -38,6 +39,7 @@
                             @foreach ($stok as $s)
                             <tr>
                                 <th scope="row">{{$s->ukuran}}</th>
+                                <td>{{$s->keterangan}}</td>
                                 <td>{{$s->harga}}</td>
                                 <td>{{$s->jumlah}}</td>
                                 <td><a class="btn btn-primary" href="{{ route('edit-stok', $s->id) }}" style=" color: white;">Edit</a></td>

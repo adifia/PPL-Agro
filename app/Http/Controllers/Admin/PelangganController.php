@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Stok;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -50,6 +51,14 @@ class PelangganController extends Controller
         $user = User::paginate(5);
         return view('pelanggan.index', [
             'user' => $user
+        ]);
+    }
+
+    public function stok()
+    {
+        $stok = Stok::all();
+        return view('pelangganStok', [
+            'stok' => $stok
         ]);
     }
 }

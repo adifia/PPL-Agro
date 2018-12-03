@@ -23,6 +23,13 @@
                             <label for="exampleInputEmail1">Ukuran</label>
                             <input type="text" class="form-control" id="ukuran" name="ukuran" aria-describedby="emailHelp" placeholder="ukuran" readonly="readonly" value="{{$stok->ukuran}}">
                         </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Keterangan</label>
+                            <textarea class="form-control" id="keterangan" name="keterangan" rows="5" cols="95">{{$stok->keterangan}}
+                            </textarea>
+                        </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Harga /kg</label>
                             <input type="number" class="form-control" id="harga" name="harga" aria-describedby="emailHelp" placeholder="Harga" value="{{$stok->harga}}">

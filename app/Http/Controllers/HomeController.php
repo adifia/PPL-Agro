@@ -32,9 +32,10 @@ class HomeController extends Controller
             
         }elseif ($user->role == "pelanggan") {
             return redirect('/home-pelanggan');
-            
         }elseif ($user->role == "kurir"){
             return redirect('/home-kurir');    
+        }elseif ($user->role == 'pemilik'){
+            return redirect('/home-pemilik');
         }
         
     }
