@@ -23,9 +23,15 @@ class HomePelangganController extends Controller
     	]);
     }
 
-    public function pemilik()
+    public function pemilik(Request $request)
     {
     	$pesanan = Pesanan::where('status', '=', 'Diterima')->orderBy('updated_at', 'desc')->get();
+    	if ($request->query('bulan')) {
+    		$pesanan = Pesanan::where('status', '=', 'Diterima')
+    		->whereMonth('updated_at', '=', $request->query('bulan'))
+    		->whereYear('updated_at', '=', $request->query('tahun'))
+    		->orderBy('updated_at', 'desc')->get();
+    	}
     	return view('home-pemilik', [
     		'pesanan' => $pesanan
     	]);

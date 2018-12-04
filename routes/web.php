@@ -80,3 +80,6 @@ Route::get('/batalkan-pesanan/{id}', 'PesananController@batal')->name('batalkan-
 
 //kecamatan profile
 Route::get('/get-kecamatan/{id}', 'ProfilController@kecamatan')->name('get-kecamatan');
+
+//laporan pemilik
+Route::get('/laporan', 'PelangganController@laporan')->name('laporan');

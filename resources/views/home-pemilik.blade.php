@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Laporan penjualan</div>
-                    
+
 
                 <div class="card-body">
                     @if (session('status'))
@@ -25,8 +25,41 @@
                         {{ session('status') }}
                     </div>
                     @endif
+                    <form action="{{ route('home-pemilik') }}">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <p>Bulan 
+                                    <select name="bulan" id="bulan">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Tahun 
+                                    <select name="tahun" id="tahun">
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-success">Lihat Laporan</button><br><br>
+                            </div>
+                        </div>
+                    </form>
+                    
                     <div class="table-responsive">
-
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
