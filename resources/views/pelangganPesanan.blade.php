@@ -76,7 +76,9 @@
                                 </td>
 
                                 <td>
-                                    <a class="btn btn-warning" onclick="hapus(event, '{{ route('batalkan-pesanan', $pes->id) }}')">Batal</a>
+                                    @if ($pes->status == 'Menunggu verifikasi')
+                                        <a class="btn btn-warning" onclick="hapus(event, '{{ route('batalkan-pesanan', $pes->id) }}')">Batal</a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
