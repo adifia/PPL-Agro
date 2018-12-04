@@ -40,6 +40,7 @@
                                 <th scope="col">Status</th>
                                 {{-- <th scope="col">Aksi</th> --}}
                                 <th scope="col">Bukti Pembayaran</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,6 +74,10 @@
                                     <a class="btn btn-primary" href="{{$pes->bukti_pembayaran}}" target="_blank">Lihat</a> 
                                     @endif
                                 </td>
+
+                                <td>
+                                    <a class="btn btn-warning" onclick="hapus(event, '{{ route('batalkan-pesanan', $pes->id) }}')">Batal</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -87,14 +92,13 @@
     </div>
 </div>
 @endsection
-{{-- @push('script')
+@push('script')
     <script>
-        $(document).ready(function(){
+        function hapus(e, url){
+            if (confirm('Apakah anda yakin ?')) {
+                window.location=url
+            }              
             
-        })
-        function idupin(){
-            $('#alamat').attr('readonly', false)
-            $('#nohp').attr('readonly', false)
         }
     </script>
-    @endpush --}}
+    @endpush

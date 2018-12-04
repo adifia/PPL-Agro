@@ -45,6 +45,10 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary" value="save">Simpan</button>
+
+                        <a href="{{ route('batalkan-stok') }}" class="btn btn-danger">Batal</a>
+
+
                         {{ csrf_field() }}
                     </form>
                 </div>

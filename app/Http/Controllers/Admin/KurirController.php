@@ -36,7 +36,7 @@ class KurirController extends Controller
         $kab=Kabupaten::find($request->kabupaten);
 		$kurir->nama = $request->nama;
 		$kurir->email = $request->email;
-		$kurir->password = $request->password;
+		$kurir->password = bcrypt($request->password);
 		$kurir->jenisKelamin = $request->jeniskelamin;
 		$kurir->alamat = $request->alamat.', kecamatan '.$kec->kecamatan.', kabupaten '.$kab->kabupaten;
 		$kurir->nohp = $request->nohp;

@@ -53,6 +53,7 @@ Route::get('/tambah-stok', 'Admin\StokController@tambah')->name('tambah-stok');
 Route::post('/simpan-stok', 'Admin\StokController@simpan')->name('simpan-stok');
 ROute::get('/edit-stok/{id}', 'Admin\StokController@edit')->name('edit-stok');
 Route::post('/update-stok/{id}', 'Admin\StokController@update')->name('update-stok');
+Route::get('batalkan-stok', 'Admin\StokController@batal')->name('batalkan-stok');
 
 //stok pelanggan
 Route::get('/stok-pelanggan', 'Admin\PelangganController@stok')->name('stok-pelanggan');
@@ -69,12 +70,13 @@ Route::get('/batal-pesanan/{id}', 'Admin\PesananController@batal')->name('batal'
 //pesanan kurir
 Route::get('/pesanan-diterima/{id}', 'Admin\PesananController@diterima')->name('diterima');
 
-//pesanan user
+//pesanan pelanggan
 Route::get('/pesanan', 'PesananController@index')->name('pesanan');
 Route::get('/buat-pesanan', 'PesananController@buat')->name('buat-pesanan');
 Route::post('/simpan-pesanan', 'PesananController@simpan')->name('simpan-pesanan');
 Route::get('/upload-bukti/{id}', 'PesananController@upload')->name('upload-bukti');
 Route::post('/simpan-bukti/{id}', 'PesananController@simpanB')->name('simpan-bukti');
+Route::get('/batalkan-pesanan/{id}', 'PesananController@batal')->name('batalkan-pesanan');
 
 //kecamatan profile
 Route::get('/get-kecamatan/{id}', 'ProfilController@kecamatan')->name('get-kecamatan');

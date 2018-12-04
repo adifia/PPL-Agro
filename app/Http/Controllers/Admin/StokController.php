@@ -47,4 +47,9 @@ class StokController extends Controller
         $stok->save();
         return redirect()->route('data-stok');
     }
+
+    public function batal()
+    {
+        return redirect()->route('data-stok');
+    }
 }

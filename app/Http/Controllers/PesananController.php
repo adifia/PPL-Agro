@@ -62,7 +62,15 @@ class PesananController extends Controller
 		$buktiPembayaran = url('storage/'.str_replace('public/', '', $request->file('bukti')->store('public/pembayaran')));
 		Pesanan::find($id)->update([
 			'bukti_pembayaran'=>$buktiPembayaran,
+			
 		]);
+		return redirect()->route('pesanan');
+	}
+
+	public function batal($id)
+	{
+		$pesanan = Pesanan::find($id);
+		$pesanan->delete();
 		return redirect()->route('pesanan');
 	}
 }
