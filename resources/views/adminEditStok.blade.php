@@ -21,23 +21,23 @@
                     <form method="post" action="{{ route('update-stok', $stok->id) }}">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ukuran</label>
-                            <input type="text" class="form-control" id="ukuran" name="ukuran" aria-describedby="emailHelp" placeholder="ukuran" readonly="readonly" value="{{$stok->ukuran}}">
+                            <input type="text" class="form-control" id="ukuran" name="ukuran" aria-describedby="emailHelp" placeholder="ukuran" value="{{$stok->ukuran}}" required="required">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Keterangan</label>
-                            <textarea class="form-control" id="keterangan" name="keterangan" rows="5" cols="95">{{$stok->keterangan}}
+                            <textarea class="form-control" id="keterangan" name="keterangan" rows="5" cols="95" required="required">{{$stok->keterangan}}
                             </textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Harga /kg</label>
-                            <input type="number" class="form-control" id="harga" name="harga" aria-describedby="emailHelp" placeholder="Harga" value="{{$stok->harga}}">
+                            <input type="number" class="form-control" id="harga" name="harga" aria-describedby="emailHelp" placeholder="Harga" value="{{$stok->harga}}" required="required">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Jumlah (kg)</label>
-                            <input type="number" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" placeholder="Jumlah" value="{{$stok->jumlah}}" readonly="readonly">
+                            <input type="number" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" placeholder="Jumlah" value="{{$stok->jumlah}}" readonly="readonly" required="required">
                             
                             <a type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahModal">Tambah</a>
                             <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#kurangModal">Kurangi</a>

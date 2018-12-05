@@ -17,6 +17,14 @@ class PesananController extends Controller
 		]);
 	}
 
+	public function detail($id)
+	{
+		$pesanan = Pesanan::find($id);
+		return view('adminDetailPesanan', [
+			'pesanan' => $pesanan
+		]);
+	}
+
 	public function verif1(Request $request,$id)
 	{
 		
@@ -24,6 +32,7 @@ class PesananController extends Controller
 		$stok = Stok::find($pesanan->id_stok);
 		$stok->jumlah = $stok->jumlah-$pesanan->jumlah_pesanan;
 		$pesanan->status = 'Diverifikasi';
+		$pesanan->harga = $pesanan->harga+$request->ongkos;
 		$pesanan->save();
 		$stok->save();
 		return redirect('/data-pesanan');

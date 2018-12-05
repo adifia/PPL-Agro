@@ -59,8 +59,6 @@
                                         <a class="btn btn-success" href="{{ route('diterima', $pes->id) }}" style="">Diterima</a>
                                         @elseif($pes->status == 'Diterima')
                                         status {{$pes->status}}
-                                        @elseif($pes->status == 'Dalam pengiriman' && strtotime(date('Y-m-d')) > strtotime(date('Y-m-d', strtotime($pes->updated_at. '+3 days'))))
-                                        
                                         @endif
                                     </td>
                                 </tr>

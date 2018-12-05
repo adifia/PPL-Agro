@@ -61,13 +61,13 @@ Route::get('/stok-pelanggan', 'Admin\PelangganController@stok')->name('stok-pela
 
 //data pesanan (admin)
 Route::get('/data-pesanan', 'Admin\PesananController@index')->name('data-pesanan');
-Route::get('/verif-pesanan/{id}', 'Admin\PesananController@verif1')->name('verif1');
+Route::post('/verif-pesanan/{id}', 'Admin\PesananController@verif1')->name('verif1');
 Route::get('/verif-pembayaran/{id}', 'Admin\PesananController@verif2')->name('verif2');
 Route::get('/tolak-pesanan/{id}', 'Admin\PesananController@tolak')->name('tolak');
 Route::get('/alasan-penolakan/{id}', 'Admin\PesananController@alasan_tolak')->name('alasan-tolak');
 Route::get('/alasan-pembatalan/{id}', 'Admin\PesananController@alasan')->name('alasan');
 Route::get('/batal-pesanan/{id}', 'Admin\PesananController@batal')->name('batal');
-
+Route::get('/detail-pesanan/{id}', 'Admin\PesananController@detail')->name('detail-pesanan');
 //pesanan (kurir)
 Route::get('/pesanan-diterima/{id}', 'Admin\PesananController@diterima')->name('diterima');
 

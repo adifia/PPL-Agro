@@ -75,7 +75,7 @@
                                         @endif
                                     </td>
                                     <td>@if($pes->status == 'Menunggu verifikasi')
-                                        <a class="btn btn-success" href="{{ route('verif1', $pes->id) }}">Verifikasi Pesanan</a><br>
+                                        <a class="btn btn-success" href="{{ route('detail-pesanan', $pes->id) }}">Verifikasi Pesanan</a><br>
                                         <a class="btn btn-danger" href="{{ route('alasan-tolak', $pes->id) }}">Tolak Pesanan</a>
                                         @elseif($pes->status == 'Diverifikasi' && !empty($pes->bukti_pembayaran))
                                         <a class="btn btn-success" href="{{ route('verif2', $pes->id) }}">Verifikasi Pembayaran</a>
