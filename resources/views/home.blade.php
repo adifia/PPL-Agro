@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action">
+                <a href="{{ route('coba') }}" class="list-group-item list-group-item-action">
                     Data Pelanggan
                 </a>
                 <a href="{{ route('data-kurir') }}" class="list-group-item list-group-item-action">

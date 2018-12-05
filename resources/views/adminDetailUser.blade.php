@@ -51,7 +51,7 @@
                             <label for="exampleInputEmail1">Role</label>
                             <input type="text" class="form-control" id="role" name="role" aria-describedby="emailHelp" placeholder="role" value="{{$user->role}}" readonly="readonly">
                         </div>
-                        <a class="btn btn-primary" href="{{ route('edit-data', $user->id) }}" style=" color: white;">Ubah</a>
+                        <a class="btn btn-primary" href="{{ route('data-pelanggan') }}" style=" color: white;">Kembali</a>
                     </form>
 
                 </div>

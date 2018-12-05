@@ -61,10 +61,4 @@ class PelangganController extends Controller
             'stok' => $stok
         ]);
     }
-
-    //pemilik lihat laporan
-    // public function laporan()
-    // {
-    //     $pesanan = Pesanan::where()
-    // }
 }

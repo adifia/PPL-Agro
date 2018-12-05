@@ -79,4 +79,9 @@ class KurirController extends Controller
         $user->save();
         return redirect()->route('detail-kurir', $id);
     }
+
+    public function batal()
+    {
+    	return redirect()->route('data-kurir');
+    }
 }

@@ -1,13 +1,12 @@
-<!-- Start Header Top Area -->
     <div class="header-top-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                        <a href="#"><img src="template/img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                {{-- <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
                             <li class="nav-item dropdown">
@@ -29,7 +28,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <img src="template/img/post/1.jpg" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>David Belle</h3>
@@ -275,8 +274,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
-    <!-- End Header Top Area -->
+    <!-- End Header Top Area

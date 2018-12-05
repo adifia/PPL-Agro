@@ -38,6 +38,7 @@
                                     <th scope="col">Jumlah Pesanan</th>
                                     <th scope="col">Alamat</th>
                                     <th scope="col">Total Harga</th>
+                                    <th scope="col">Tanggal maksimal dikirim</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -45,16 +46,20 @@
                                 @foreach ($pesanan as $pes)
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$pes->created_at}}</td>
+                                    <td>{{$pes->updated_at}}</td>
                                     <td>{{$pes->user->nama}}</td>
                                     <td>{{$pes->user->noHp}}</td>
                                     <td>{{$pes->ukuran}}</td>
                                     <td>{{$pes->jumlah_pesanan}}</td>
                                     <td>{{$pes->alamat}}</td>
                                     <td>Rp.{{$pes->harga}}</td>
-
-                                    <td>@if($pes->status == 'Dalam pengiriman')
+                                    <td>{{date('Y-m-d', strtotime($pes->updated_at. '+3 days'))}}</td>
+    
+                                    <td>@if($pes->status == 'Dalam pengiriman' && strtotime(date('Y-m-d')) < strtotime(date('Y-m-d', strtotime($pes->updated_at. '+3 days'))))
                                         <a class="btn btn-success" href="{{ route('diterima', $pes->id) }}" style="">Diterima</a>
+                                        @elseif($pes->status == 'Diterima')
+                                        status {{$pes->status}}
+                                        @elseif($pes->status == 'Dalam pengiriman' && strtotime(date('Y-m-d')) > strtotime(date('Y-m-d', strtotime($pes->updated_at. '+3 days'))))
                                         
                                         @endif
                                     </td>

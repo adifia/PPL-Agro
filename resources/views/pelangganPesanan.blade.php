@@ -71,7 +71,8 @@
                                     @if($pes->status == 'Diverifikasi' && is_null($pes->bukti_pembayaran))
                                     <a class="btn btn-success" href="{{ route('upload-bukti', $pes->id) }}" style=" color: white;">Upload</a> 
                                     @elseif($pes->bukti_pembayaran)
-                                    <a class="btn btn-primary" href="{{$pes->bukti_pembayaran}}" target="_blank">Lihat</a> 
+                                    <a class="btn btn-primary" href="{{$pes->bukti_pembayaran}}" target="_blank">Lihat</a>
+                                    <a href="{{ route('upload-bukti', $pes->id) }}">Ubah</a>
                                     @endif
                                 </td>
 
@@ -100,7 +101,6 @@
             if (confirm('Apakah anda yakin ?')) {
                 window.location=url
             }              
-            
         }
     </script>
     @endpush
