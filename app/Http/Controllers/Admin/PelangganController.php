@@ -58,7 +58,10 @@ class PelangganController extends Controller
     {
         $stok = Stok::all();
         return view('pelangganStok', [
-            'stok' => $stok
+            'stok' => $stok,
+            'title' => 'Stok',
+            'keterangan' => 'Stok ikan tersedia',
+            'active' => 'stok'
         ]);
     }
 }

@@ -11,7 +11,10 @@ class HomePelangganController extends Controller
     {
     	$user=User::all();
     	return view('home-pelanggan', [
-    		'user' => $user
+    		'user' => $user,
+    		'active' => 'beranda',
+    		'title' => 'Selamat datang di Web kami',
+    		'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
     		]);
     }
 
@@ -19,7 +22,9 @@ class HomePelangganController extends Controller
     {
     	$pesanan = Pesanan::where('status', '=', 'Dalam pengiriman')->orWhere('status', '=', 'Diterima')->orderBy('updated_at', 'desc')->get();
     	return view('kurir', [
-    		'pesanan' => $pesanan
+    		'pesanan' => $pesanan,
+    		'title' => 'Selamat Kurir',
+    		'keterangan' => 'Berikut pesanan yang harus dikirimkan'
     	]);
     }
 

@@ -1,21 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('menu')
+{{-- @section('menu')
 <li class="nav-item">
     <a class="nav-link" href="{{route('profil')}}">Profil</a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="{{ route('pesanan') }}">Pesanan</a>
 </li>
-@endsection
+@endsection --}}
 
-@section('content')
+@section('table')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pesananmu</div>
+                {{-- <div class="card-header">Pesananmu</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -24,7 +24,7 @@
                     </div>
                     @endif
 
-                    Buat Pesanan
+                    Buat Pesanan --}}
 
 
                     {{-- form profile --}}
@@ -40,12 +40,12 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Jumlah (kg)</label>
-                            <input type="number" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" placeholder="Jumlah">
+                            <input type="number" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" placeholder="Jumlah" required="required">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Alamat Pengiriman</label><br>
-                            <textarea class="form-control" id="alamat" name="alamat" rows="5" cols="95">{{Auth::user()->alamat}}</textarea>
+                            <textarea class="form-control" id="alamat" name="alamat" rows="5" cols="95" required="required">{{Auth::user()->alamat}}</textarea>
                         </div>
                        
                         <button type="submit" class="btn btn-primary" value="save">Tambah</button>

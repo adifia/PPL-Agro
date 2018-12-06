@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('menu')
+{{-- @section('menu')
 <li class="nav-item">
 	<a class="nav-link" href="{{route('profil')}}">Profil</a>
 </li>
@@ -10,15 +10,15 @@
 <li class="nav-item">
 	<a class="nav-link" href="{{ route('pesanan') }}">Pesanan</a>
 </li>
-@endsection
+@endsection --}}
 
-@section('content')
+@section('table')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card">
-				<div class="card-header">Stok Ikan Lele</div>
+				{{-- <div class="card-header">Stok Ikan Lele</div> --}}
 
 				<div class="card-body">
 					@if (session('status'))
@@ -42,7 +42,7 @@
 							</div>
 							@endforeach
 						</div>
-						<center><a href="{{ route('buat-pesanan') }}" style="margin-top: 15px" class="btn btn-success">Pesan</a></center>
+						<center><a href="{{ route('buat-pesanan') }}" style="margin-top: 15px" class="btn btn-success">Buat Pesanan</a></center>
 					</div>
 
 

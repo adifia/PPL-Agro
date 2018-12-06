@@ -11,16 +11,17 @@
 										<i class="notika-icon notika-windows"></i>
 									</div>
 									<div class="breadcomb-ctn">
-										<h2>Data Table</h2>
-										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+										<h2>{{$title}}</h2>
+										<p>{{$keterangan}}</p>
+										{{-- <span class="bread-ntd">Admin Template</span> --}}
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+							{{-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
 								<div class="breadcomb-report">
 									<button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
 								</div>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>

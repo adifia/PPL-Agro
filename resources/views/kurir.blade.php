@@ -1,19 +1,21 @@
-@extends('layouts.app')
+@include('layouts.css')
+@extends('layouts.header')
+@include('layouts.breadcumb')
 
-@section('content')
+@section('table')
 <div class="container">
 
     <div class="row">
-        <div class="col-md-3">
-            {{-- <div class="list-group">
+        {{-- <div class="col-md-3">
+            <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action">
                     Data User
                 </a>
                 <a href="{{ route('data-stok') }}" class="list-group-item list-group-item-action">Stok</a>
                 <a href="{{ route('data-pesanan') }}" class="list-group-item list-group-item-action active">Pesanan</a>
 
-            </div> --}}
-        </div>
+            </div>
+        </div> --}}
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Berikut pesanan yang harus dikirim</div>
@@ -73,3 +75,6 @@
     </div>
 </div>
 @endsection
+
+{{-- @include('layouts.footer') --}}
+@include('layouts.js')

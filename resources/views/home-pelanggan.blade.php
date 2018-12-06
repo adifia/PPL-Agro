@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('menu')
+{{-- @section('menu')
 <li class="nav-item">
     <a class="nav-link" href="{{ route('profil') }}">Profil</a>
 </li>
@@ -10,7 +10,7 @@
 <li class="nav-item">
     <a class="nav-link" href="{{ route('pesanan') }}">Pesanan</a>
 </li>
-@endsection
+@endsection --}}
 
 
 @section('content')

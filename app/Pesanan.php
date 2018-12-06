@@ -12,13 +12,6 @@ class Pesanan extends Model
         'bukti_pembayaran',
     ];
 
-    // public $timestamps=false;
-
-    // public function detail()
-    // {
-    // 	return $this->hashMany('App\DetailPesanan', 'id_pesanan');
-    // }
-    
     public function user()
     {
     	return $this->belongsTo('App\User', 'id_user');

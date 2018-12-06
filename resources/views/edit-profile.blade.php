@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('table')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Akun</div>
+                {{-- <div class="card-header">Akun</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                     </div>
                     @endif
 
-                    Kamu adalah pelanggan
+                    Kamu adalah pelanggan --}}
 
                     {{-- form profile --}}
                     <form action="{{ route('simpan-profile') }}" method="post">
@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="exampleInputEmail1">Kabupaten</label>
-                                <select name="kabupaten" id="kabupaten" class="form-control" onchange="panggil_kecamatan(event,this)">
+                                <select name="kabupaten" id="kabupaten" class="form-control" onchange="panggil_kecamatan(event,this)" required="required">
                                 <option value=""></option>
                                  @foreach ($kabupaten as $kab)
                                  <option value="{{$kab->id}}">{{$kab->kabupaten}}</option>
@@ -44,19 +44,19 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleInputEmail1">Kecamatan</label>
-                                <select name="kecamatan" id="kecamatan" class="form-control">
+                                <select name="kecamatan" id="kecamatan" class="form-control" required="required">
                                 </select>
                             </div>
                         </div><br>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Alamat (Desa dan alamat lengkap)</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->alamat}}">
+                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->alamat}}" required="required">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">No HP</label>
-                            <input type="number" class="form-control" id="nohp" name="nohp" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->noHp}}">
+                            <input type="number" class="form-control" id="nohp" name="nohp" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->noHp}}" required="required">
                         </div>
                         <input type="hidden" name="_method" value="post">
                         <button type="submit" class="btn btn-primary" value="save">Simpan</button>

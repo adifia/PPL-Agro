@@ -4,22 +4,22 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li><a href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                        <li  @if($active == 'beranda') class="active" @endif><a href="{{ route('home-pelanggan') }}"><i class="notika-icon notika-house"></i> Beranda</a>
                         </li>
-                        <li><a href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                        <li @if($active == 'profil') class="active" @endif><a href="{{ route('profil') }}"><i class="notika-icon notika-support"></i> Profil</a>
                         </li>
-                        <li><a href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                        <li @if($active == 'stok') class="active" @endif><a href="{{ route('stok-pelanggan') }}"><i class="notika-icon notika-form"></i> Stok</a>
                         </li>
-                        <li><a href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        <li @if($active == 'pesanan') class="active" @endif><a href="{{ route('pesanan') }}"><i class="notika-icon notika-edit"></i> Pesanan</a>
+                        </li>
+                        {{-- <li><a href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
                         </li>
                         <li class="active"><a href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
                         </li>
-                        <li><a href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
-                        </li>
                         <li><a href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
                         </li>
-                        <li><a href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
-                        </li>
+                        <li><a href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                        </li> --}}
                     </ul>
                     {{-- <div class="tab-content custom-menu-content">
                         <div id="Home" class="tab-pane in notika-tab-menu-bg animated flipInX">

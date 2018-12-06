@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('menu')
 <li class="nav-item">
@@ -9,13 +9,13 @@
 </li>
 @endsection
 
-@section('content')
+@section('table')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Akun</div>
+               {{--  <div class="card-header">Akun</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -24,7 +24,7 @@
                     </div>
                     @endif
 
-                    Kamu adalah pelanggan
+                    Kamu adalah pelanggan --}}
 
                     {{-- form profile --}}
                     <form>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Jenis Kelamin</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="-" value="{{Auth::user()->jenisKelamin}}" readonly="readonly">
+                            <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="-" value="{{Auth::user()->jenisKelamin}}" readonly="readonly">
                         </div>
                         
                         <div class="form-group">

@@ -13,7 +13,11 @@ class ProfilController extends Controller
 {
     public function index()
     {
-        return view('profile');
+        return view('profile', [
+            'title' => 'Profil pengguna',
+            'keterangan' => 'Detail',
+            'active' => 'profil'
+        ]);
     }
 
     public function edit()
@@ -22,7 +26,10 @@ class ProfilController extends Controller
         $kec = Kecamatan::all();
         return view('edit-profile', [
             'kabupaten' => $kab, 
-            'kecamatan' => $kec
+            'kecamatan' => $kec,
+            'active' => 'profil',
+            'title' => 'Profil pengguna',
+            'keterangan' => 'Edit profil',
         ]);
     }
 

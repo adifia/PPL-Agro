@@ -16,14 +16,20 @@ class PesananController extends Controller
 		$pesanan = Pesanan::where('id_user', '=', $id)->get();
 
 		return view('pelangganPesanan', [
-			'pesanan' => $pesanan
+			'pesanan' => $pesanan,
+			'active' => 'pesanan',
+			'title' => 'Pesanan',
+			'keterangan' => 'Pesanan anda'
 		]);
 	}
 	public function buat()
 	{
 		$stok = Stok::all();
 		return view('pelangganBuatPesanan', [
-			'stok' => $stok
+			'stok' => $stok,
+			'active' => 'pesanan',
+			'title' => 'Pesanan',
+			'keterangan' => 'Buat pesanan'
 		]);
 	}
 	public function simpan(Request $request)
@@ -51,6 +57,9 @@ class PesananController extends Controller
 	{
 		return view('pelangganUploadBukti',[
 			'id'=>$id,
+			'active' => 'pesanan',
+			'title' => 'Upload',
+			'keterangan' => 'bukti pembayaran'
 		]);
 	}
 
