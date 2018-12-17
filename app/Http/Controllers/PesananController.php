@@ -13,7 +13,7 @@ class PesananController extends Controller
 	{
 		$user = Auth::user();
 		$id = Auth::id();
-		$pesanan = Pesanan::where('id_user', '=', $id)->get();
+		$pesanan = Pesanan::where('id_user', '=', $id)->orderBy('created_at', 'desc')->paginate(5);
 
 		return view('pelangganPesanan', [
 			'pesanan' => $pesanan,

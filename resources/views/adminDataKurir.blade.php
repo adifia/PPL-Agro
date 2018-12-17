@@ -1,6 +1,48 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
+@section('tableA')
+{{-- <div class="container"> --}}
+    <div class="row">
+
+        {{-- <div class="data-table-list"> --}}
+            {{-- <div class="table"> --}}
+                <div class="col-md-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">No Hp</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($user as $u)
+                        <tr>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{$u->nama}}</td>
+                            <td>{{$u->email}}</td>
+                            <td>{{$u->jenisKelamin}}</td>
+                            <td>{{$u->alamat}}</td>
+                            <td>{{$u->noHp}}</td>
+                            <td>
+                                <a class="btn btn-success" href="{{ route('detail-kurir', $u->id) }}">Detail</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <a class="btn btn-primary" href="{{ route('tambah-kurir') }}">Tambah Kurir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+{{-- @section('content')
 <div class="container">
 
     <div class="row">
@@ -55,7 +97,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                     <a class="btn btn-primary" href="{{ route('tambah-kurir') }}">Tambah Kurir</a>
+                    <a class="btn btn-primary" href="{{ route('tambah-kurir') }}">Tambah Kurir</a>
                     <div style="float: right;">
                         {{$user->links()}}
                     </div>
@@ -65,4 +107,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

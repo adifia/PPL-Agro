@@ -28,7 +28,11 @@ class HomeController extends Controller
         $user = Auth::user();
 
         if ($user->role == "admin") {
-            return view('home');
+            return view('home', [
+                'active' => 'beranda',
+                'title' => 'Selamat datang Admin',
+                'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
+            ]);
             
         }elseif ($user->role == "pelanggan") {
             return redirect('/home-pelanggan');

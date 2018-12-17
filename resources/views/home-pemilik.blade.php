@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainPK')
 
-@section('content')
+@section('tableA')
 <div class="container">
 
     <div class="row">
@@ -16,7 +16,6 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Laporan penjualan</div>
 
 
                 <div class="card-body">
@@ -54,7 +53,7 @@
                                 </p>
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" class="btn btn-success">Lihat Laporan</button><br><br>
+                                <button type="submit" class="btn btn-success">Lihat</button><br><br>
                             </div>
                         </div>
                     </form>

@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
+@section('tableA')
 <div class="container">
 
-    <div class="row">
+   {{--  <div class="row">
         <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action active">
@@ -13,10 +13,10 @@
                 <a href="#" class="list-group-item list-group-item-action">Data Pesanan</a>
 
             </div>
-        </div>
+        </div> --}}
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header">Edit Data Pelanggan</div>
+                {{-- <div class="card-header">Edit Data Pelanggan</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -60,7 +60,7 @@
                         
                         <div class="form-group">
                             <label for="exampleInputEmail1">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="-" value="{{$user->alamat}}">
+                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="-" value="">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">No HP</label>
@@ -75,6 +75,7 @@
                                </select>
                         </div>
                         <button type="submit" class="btn btn-primary" value="save">Simpan</button>
+                        <a class="btn btn-danger" href="{{ route('data-kurir') }}" style=" color: white;">Batal</a>
                         {{ csrf_field() }}
                     </form>
 

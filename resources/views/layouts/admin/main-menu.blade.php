@@ -4,17 +4,18 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li  @if($active == 'beranda') class="active" @endif><a href="{{ route('home-pelanggan') }}"><i class="notika-icon notika-house"></i> Beranda</a>
+                        <li  @if($active == 'beranda') class="active" @endif><a href="{{ route('home') }}"><i class="notika-icon notika-house"></i> Beranda</a>
                         </li>
-                        <li @if($active == 'profil') class="active" @endif><a href="{{ route('profil') }}"><i class="notika-icon notika-support"></i> Profil</a>
+                        <li @if($active == 'kurir') class="active" @endif><a href="{{ route('data-kurir') }}"><i class="notika-icon notika-support"></i> Data Kurir</a>
                         </li>
-                        <li @if($active == 'stok') class="active" @endif><a href="{{ route('stok-pelanggan') }}"><i class="notika-icon notika-form"></i> Produk</a>
+                        <li @if($active == 'pelanggan') class="active" @endif><a href="{{ route('data-pelanggan') }}"><i class="notika-icon notika-bar-chart"></i> Data Pelanggan</a>
                         </li>
-                        <li @if($active == 'pesanan') class="active" @endif><a href="{{ route('pesanan') }}"><i class="notika-icon notika-edit"></i> Pesanan</a>
+                        <li @if($active == 'stok') class="active" @endif><a href="{{ route('data-stok') }}"><i class="notika-icon notika-form"></i> Data Stok</a>
                         </li>
-                        {{-- <li><a href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        <li @if($active == 'pesanan') class="active" @endif><a href="{{ route('data-pesanan') }}"><i class="notika-icon notika-edit"></i>Data Pesanan</a>
                         </li>
-                        <li class="active"><a href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
+                        
+                        {{-- <li class="active"><a href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
                         </li>
                         <li><a href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
                         </li>

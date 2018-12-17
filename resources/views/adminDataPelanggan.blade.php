@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
-<div class="container">
+@section('tableA')
+{{-- <div class="container"> --}}
 
     <div class="row">
-        <div class="col-md-3">
+        {{-- <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action active">
                     Data User
@@ -13,10 +13,10 @@
                 <a href="{{ route('data-pesanan') }}" class="list-group-item list-group-item-action">Pesanan</a>
 
             </div>
-        </div>
-        <div class="col-md-9">
+        </div> --}}
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data User</div>
+                {{-- <div class="card-header">Data User</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -34,7 +34,6 @@
                                 <th scope="col">Jenis Kelamin</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">No Hp</th>
-                                <th scope="col">Role</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -47,7 +46,6 @@
                                 <td>{{$u->jenisKelamin}}</td>
                                 <td>{{$u->alamat}}</td>
                                 <td>{{$u->noHp}}</td>
-                                <td>{{$u->role}}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('detail-data', $u->id) }}" style=" color: white;">Detail</a>
                                 </td>
@@ -61,7 +59,7 @@
 
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 </div>
 @endsection

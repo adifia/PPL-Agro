@@ -38,7 +38,9 @@ class HomePelangganController extends Controller
     		->orderBy('updated_at', 'desc')->get();
     	}
     	return view('home-pemilik', [
-    		'pesanan' => $pesanan
+    		'pesanan' => $pesanan,
+    		'title' => 'Selamat Datang Pemilik',
+    		'keterangan' => 'Berikut laporan penjualan'
     	]);
     }
 

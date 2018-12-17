@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
+@section('tableA')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Data kurir</div>
+                {{-- <div class="card-header">Data kurir</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,8 +14,6 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    Tambah Data Kurir
 
                     <form method="post" action="{{ route('simpan-kurir')}}">
                         <div class="form-group">

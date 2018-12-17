@@ -1,8 +1,6 @@
-@include('layouts.css')
-@extends('layouts.header')
-@include('layouts.breadcumb')
+@extends('layouts.admin.mainPK')
 
-@section('table')
+@section('tableA')
 <div class="container">
 
     <div class="row">
@@ -18,7 +16,7 @@
         </div> --}}
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Berikut pesanan yang harus dikirim</div>
+                {{-- <div class="card-header">Berikut pesanan yang harus dikirim</div> --}}
                     
 
                 <div class="card-body">

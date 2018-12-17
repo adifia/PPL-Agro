@@ -11,9 +11,12 @@ class PesananController extends Controller
 {
 	public function index()
 	{
-		$pesanan = Pesanan::with('user')->get();
+		$pesanan = Pesanan::with('user')->orderBy('created_at', 'desc')->paginate(5);
 		return view('adminDataPesanan', [
-			'pesanan' => $pesanan
+			'pesanan' => $pesanan,
+			'active' => 'pesanan',
+            'title' => 'Data Pesanan',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
 		]);
 	}
 
@@ -49,7 +52,10 @@ class PesananController extends Controller
 	public function alasan_tolak($id)
 	{
 		return view('adminAlasanPenolakan', [
-			'id' => $id
+			'id' => $id,
+			'active' => 'pesanan',
+            'title' => 'Alasan Penolakan',
+            'keterangan' => 'Masukkan alasan'
 		]);
 	}
 
@@ -66,7 +72,10 @@ class PesananController extends Controller
 	public function alasan($id)
 	{
 		return view('adminAlasanPembatalan', [
-			'id' => $id
+			'id' => $id,
+			'active' => 'pesanan',
+            'title' => 'Alasan Pembatalan',
+            'keterangan' => 'Masukkan alasan'
 		]);
 	}
 

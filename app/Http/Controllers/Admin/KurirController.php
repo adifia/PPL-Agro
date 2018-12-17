@@ -13,9 +13,12 @@ class KurirController extends Controller
 {
 	public function index()
 	{
-		$user = User::where('role', '=', 'kurir')->paginate(5);
+		$user = User::where('role', '=', 'kurir')->orderBy('created_at', 'desc')->paginate(5);
 		return view('adminDataKurir', [
-			'user' => $user
+			'user' => $user,
+			'active' => 'kurir',
+    		'title' => 'Data Kurir',
+    		'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
 		]);
 	}
 
@@ -25,7 +28,10 @@ class KurirController extends Controller
         $kec = Kecamatan::all();
 		return view('adminTambahKurir', [
             'kabupaten' => $kab, 
-            'kecamatan' => $kec
+            'kecamatan' => $kec,
+            'active' => 'kurir',
+    		'title' => 'Tambah Kurir',
+    		'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
         ]);
 	}
 
@@ -49,7 +55,10 @@ class KurirController extends Controller
     {
     	$user = User::find($id);
     	return view('adminDetailKurir', [
-    		'user' => $user
+    		'user' => $user,
+    		'active' => 'kurir',
+    		'title' => 'Detail Kurir',
+    		'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
     	]);
     }
 
@@ -61,7 +70,10 @@ class KurirController extends Controller
         return view('adminEditKurir', [
             'user' => $user,
             'kabupaten' => $kab, 
-            'kecamatan' => $kec
+            'kecamatan' => $kec,
+            'active' => 'kurir',
+    		'title' => 'Ubah Data Kurir',
+    		'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
         ]);
     }
 

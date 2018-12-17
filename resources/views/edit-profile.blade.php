@@ -51,7 +51,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Alamat (Desa dan alamat lengkap)</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="" value="{{Auth::user()->alamat}}" required="required">
+                            <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" placeholder="" value="" required="required">
                         </div>
 
                         <div class="form-group">
@@ -60,6 +60,7 @@
                         </div>
                         <input type="hidden" name="_method" value="post">
                         <button type="submit" class="btn btn-primary" value="save">Simpan</button>
+                        <a class="btn btn-danger" href="{{ route('profil') }}">Batal</a>
                         {{ csrf_field() }}
                     </form>
     

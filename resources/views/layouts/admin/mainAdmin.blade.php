@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
       ============================================ -->
-      @include('layouts.css')
+      @include('layouts.admin.css')
       <!-- ============================================ -->
       <script src="template/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -18,19 +18,24 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
           <![endif]-->
-          @include('layouts.header')
+          @include('layouts.admin.header')
 
-          @include('layouts.mobileMenu')
+          {{-- @include('layouts.admin.mobileMenu') --}}
 
-          @include('layouts.main-menu')
+          @include('layouts.admin.main-menu')
 
-          @include('layouts.breadcumb')
+          @include('layouts.admin.breadcumb')
 
-          @include('layouts.data-table')
+          {{-- @include('layouts.admin.data-table') --}}
+          <div class="data-table-area">
+            <div class="container">
+              @yield('tableA')
+            </div>
+          </div>
 
-          @include('layouts.footer')
+          @include('layouts.admin.footer')
 
-          @include('layouts.js')
+          @include('layouts.admin.js')
 
 
 

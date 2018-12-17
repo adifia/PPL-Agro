@@ -13,12 +13,19 @@ class StokController extends Controller
     {
     	$stok = Stok::all();
     	return view('adminDataStok', [
-    		'stok' => $stok
+    		'stok' => $stok,
+            'active' => 'stok',
+            'title' => 'Data Stok',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
     	]);
     }
     public function tambah()
     {
-    	return view('adminTambahStok');
+    	return view('adminTambahStok', [
+            'active' => 'stok',
+            'title' => 'Tambah data Stok Ikan',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
+        ]);
     }
     public function simpan(Request $request)
     {
@@ -34,7 +41,10 @@ class StokController extends Controller
     {
         $stok = Stok::find($id);
         return view('adminEditStok', [
-            'stok' => $stok
+            'stok' => $stok,
+            'active' => 'stok',
+            'title' => 'Edit Stok',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
         ]);
     }
     public function update(Request $request, $id)

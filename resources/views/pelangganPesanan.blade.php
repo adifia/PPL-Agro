@@ -11,7 +11,6 @@
 
 @section('table')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
-<div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
@@ -86,16 +85,19 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div style="float: right;">
+                            {{$pesanan->links()}}
                         </div>
+                        </div>
+                        <a class="btn btn-danger" href="{{ route('buat-pesanan') }}" style=" color: white;">Buat Pesanan</a>
                     </div>
 
-                    <a class="btn btn-danger" href="{{ route('buat-pesanan') }}" style=" color: white;">Buat Pesanan</a>
+                    
 
                     
                 </div>
             </div>
         </div>
-    </div>
 </div>
 @endsection
 @push('script')

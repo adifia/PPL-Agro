@@ -1,13 +1,35 @@
 @extends('layouts.app')
 
-<html class="no-js" lang="">
+<div class="header-top-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="logo-area">
+                    <a href="#"><img src="img/lelehitam.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="header-top-menu">
+                    <ul class="nav navbar-nav notika-top-nav">
+                                {{-- <li><a href=" ">Login</a></li>
+                                <li><a href=" ">Registrasi</a></li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Top Area -->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Register | Notika - Notika Admin Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!doctype html>
+        <html class="no-js" lang="">
+
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <title>Login SEPIK | Sistem Informasi Pemesanan Ikan Lele</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
         ============================================ -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/img/favicon.ico') }}">
@@ -65,64 +87,157 @@
                     <div class="login-content">
                         <!-- Login -->
                         <div class="nk-block toggled" id="l-login">
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <div class="nk-form">
-                                    <div class="input-group">
-                                        <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
-                                        <div class="nk-int-st">
-                                            <input type="E-Mail" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Alamat E-Mail" name="email" value="{{ old('email') }}">
+                            <div id="header-top-area">
+                                <img src="{{ asset('template/img/logo/lelehitam.png') }}" id="logo">
+                            </div>
+                            <div class="card-body">
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <div class="nk-form">
+                                        <div class="input-group">
+                                            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
+                                            <div class="nk-int-st">
+                                                <input type="text" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Alamat E-Mail" name="email" value="{{ old('email') }}">
 
-                                            @if ($errors->has('email'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                            @endif
+                                                @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="input-group">
-                                        <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
-                                        <div class="nk-int-st">
-                                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password">
+                                        <div class="input-group">
+                                            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                                            <div class="nk-int-st">
+                                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password">
 
-                                            @if ($errors->has('password'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                            @endif
+                                                @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="fm-checkbox">
-                                        <label><input type="checkbox" class="i-checks" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <i></i> Ingat saya</label>
-                                    </div>
+                                        <div class="fm-checkbox">
+                                            {{-- <label><input type="checkbox" class="i-checks" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <i> Ingat saya</i></label> --}}
+                                        </div>
 
-                                    <div class="input-group">
-                                        <div class="col-md-6 offset-md-8">
-                                            <button type="submit" class="btn btn-success">
-                                                {{ __('Login') }}
-                                            </button>
+                                        <div class="input-group">
+                                            <div class="col-md-6 offset-md-8">
+                                                <button type="submit" class="btn btn-success">
+                                                    {{ __('Login') }}
+                                                </button>
+                                            </div>
+                                        </div>
 
 
                                 {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a> --}}
                             </div>
+                            {{-- <div class="nk-navigation nk-lg-ic">
+                                <a href="{{ route('register') }}" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+                                <a data-ma-action="nk-login-switch" data-ma-block="#l-forget-password" href="{{ route('password.request') }}"><i>?</i> <span>Forgot Password?</span></a>
+                            </div> --}}
                         </div>
 
+
                     </div>
-                    <div class="nk-navigation nk-lg-ic">
-                        <a href="{{ route('register') }}" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
-                        <a data-ma-action="nk-login-switch" data-ma-block="#l-forget-password" href="{{ route('password.request') }}"><i>?</i> <span>Forgot Password?</span></a>
-                    </div>
+
+                    
                 </div>
             </form>
 
+
         </div>
 
+    </div>
+    
+</div>
+</div>
 
 
-{{--                 <div class="card-body">
+
+@include('layouts.footer')
+
+    <!-- jquery
+        ============================================ -->
+        <script src="{{ asset('template/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+        <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
+    <!-- wow JS
+        ============================================ -->
+        <script src="{{ asset('template/js/wow.min.js') }}"></script>
+    <!-- price-slider JS
+        ============================================ -->
+        <script src="{{ asset('template/js/jquery-price-slider.js') }}"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+        <script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+        <script src="{{ asset('template/js/jquery.scrollUp.min.js') }}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+        <script src="{{ asset('template/js/meanmenu/jquery.meanmenu.js') }}"></script>
+    <!-- counterup JS
+        ============================================ -->
+        <script src="{{ asset('template/js/counterup/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('template/js/counterup/waypoints.min.js') }}"></script>
+        <script src="{{ asset('template/js/counterup/counterup-active.js') }}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+        <script src="{{ asset('template/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <!-- sparkline JS
+        ============================================ -->
+        <script src="{{ asset('template/js/sparkline/jquery.sparkline.min.js') }}"></script>
+        <script src="{{ asset('template/js/sparkline/sparkline-active.js') }}"></script>
+    <!-- flot JS
+        ============================================ -->
+        <script src="{{ asset('template/js/flot/jquery.flot.js') }}"></script>
+        <script src="{{ asset('template/js/flot/jquery.flot.resize.js') }}"></script>
+        <script src="{{ asset('template/js/flot/flot-active.js') }}"></script>
+    <!-- knob JS
+        ============================================ -->
+        <script src="{{ asset('template/js/knob/jquery.knob.js') }}"></script>
+        <script src="{{ asset('template/js/knob/jquery.appear.js') }}"></script>
+        <script src="{{ asset('template/js/knob/knob-active.js') }}"></script>
+    <!--  Chat JS
+        ============================================ -->
+        <script src="{{ asset('template/js/chat/jquery.chat.js') }}"></script>
+    <!--  wave JS
+        ============================================ -->
+        <script src="{{ asset('template/js/wave/waves.min.js') }}"></script>
+        <script src="{{ asset('template/js/wave/wave-active.js') }}"></script>
+    <!-- icheck JS
+        ============================================ -->
+        <script src="{{ asset('template/js/icheck/icheck.min.js') }}"></script>
+        <script src="{{ asset('template/js/icheck/icheck-active.js') }}"></script>
+    <!--  todo JS
+        ============================================ -->
+        <script src="{{ asset('template/js/todo/jquery.todo.js') }}"></script>
+    <!-- Login JS
+        ============================================ -->
+        <script src="{{ asset('template/js/login/login-action.js') }}"></script>
+    <!-- plugins JS
+        ============================================ -->
+        <script src="{{ asset('template/js/plugins.js') }}"></script>
+    <!-- main JS
+        ============================================ -->
+        <script src="{{ asset('template/js/main.js') }}"></script>
+
+        @endsection
+
+        
+
+    </body>
+
+    </html>
+
+
+    {{--                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -179,82 +294,3 @@
                         </div>
                     </form>
                 </div> --}}
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!-- jquery
-        ============================================ -->
-    <script src="{{ asset('template/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-    <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
-    <!-- wow JS
-        ============================================ -->
-    <script src="{{ asset('template/js/wow.min.js') }}"></script>
-    <!-- price-slider JS
-        ============================================ -->
-    <script src="{{ asset('template/js/jquery-price-slider.js') }}"></script>
-    <!-- owl.carousel JS
-        ============================================ -->
-    <script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
-    <!-- scrollUp JS
-        ============================================ -->
-    <script src="{{ asset('template/js/jquery.scrollUp.min.js') }}"></script>
-    <!-- meanmenu JS
-        ============================================ -->
-    <script src="{{ asset('template/js/meanmenu/jquery.meanmenu.js') }}"></script>
-    <!-- counterup JS
-        ============================================ -->
-    <script src="{{ asset('template/js/counterup/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('template/js/counterup/waypoints.min.js') }}"></script>
-    <script src="{{ asset('template/js/counterup/counterup-active.js') }}"></script>
-    <!-- mCustomScrollbar JS
-        ============================================ -->
-    <script src="{{ asset('template/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <!-- sparkline JS
-        ============================================ -->
-    <script src="{{ asset('template/js/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('template/js/sparkline/sparkline-active.js') }}"></script>
-    <!-- flot JS
-        ============================================ -->
-    <script src="{{ asset('template/js/flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('template/js/flot/jquery.flot.resize.js') }}"></script>
-    <script src="{{ asset('template/js/flot/flot-active.js') }}"></script>
-    <!-- knob JS
-        ============================================ -->
-    <script src="{{ asset('template/js/knob/jquery.knob.js') }}"></script>
-    <script src="{{ asset('template/js/knob/jquery.appear.js') }}"></script>
-    <script src="{{ asset('template/js/knob/knob-active.js') }}"></script>
-    <!--  Chat JS
-        ============================================ -->
-    <script src="{{ asset('template/js/chat/jquery.chat.js') }}"></script>
-    <!--  wave JS
-        ============================================ -->
-    <script src="{{ asset('template/js/wave/waves.min.js') }}"></script>
-    <script src="{{ asset('template/js/wave/wave-active.js') }}"></script>
-    <!-- icheck JS
-        ============================================ -->
-    <script src="{{ asset('template/js/icheck/icheck.min.js') }}"></script>
-    <script src="{{ asset('template/js/icheck/icheck-active.js') }}"></script>
-    <!--  todo JS
-        ============================================ -->
-    <script src="{{ asset('template/js/todo/jquery.todo.js') }}"></script>
-    <!-- Login JS
-        ============================================ -->
-    <script src="{{ asset('template/js/login/login-action.js') }}"></script>
-    <!-- plugins JS
-        ============================================ -->
-    <script src="{{ asset('template/js/plugins.js') }}"></script>
-    <!-- main JS
-        ============================================ -->
-    <script src="{{ asset('template/js/main.js') }}"></script>
-
-@endsection
-
-{{-- @include('layouts.js') --}}
-
-</body>
-
-</html>

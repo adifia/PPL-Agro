@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
+@section('tableA')
 {{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
-<div class="container">
+{{-- <div class="container"> --}}
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Data Stok</div>
+                {{-- <div class="card-header">Data Stok</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,8 +14,6 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    Edit Data Stok
 
                     {{-- form profile --}}
                     <form method="post" action="{{ route('update-stok', $stok->id) }}">
@@ -39,8 +37,8 @@
                             <label for="exampleInputEmail1">Jumlah (kg)</label>
                             <input type="number" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" placeholder="Jumlah" value="{{$stok->jumlah}}" readonly="readonly" required="required">
                             
-                            <a type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahModal">Tambah</a>
-                            <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#kurangModal">Kurangi</a>
+                            <a type="button" class="badge badge-success" data-toggle="modal" data-target="#tambahModal">Tambah</a>
+                            <a type="button" class="badge badge-danger" data-toggle="modal" data-target="#kurangModal">Kurangi</a>
 
                         </div>
                         

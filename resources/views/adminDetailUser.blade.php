@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
+@section('tableA')
 <div class="container">
 
     <div class="row">
-        <div class="col-md-3">
+        {{-- <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action active">
                     Data Pelanggan
@@ -12,10 +12,9 @@
                 <a href="{{ route('data-stok') }}" class="list-group-item list-group-item-action">Stok</a>
 
             </div>
-        </div>
-        <div class="col-md-9">
+        </div> --}}
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">Edit Data Pelanggan</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -51,7 +50,7 @@
                             <label for="exampleInputEmail1">Role</label>
                             <input type="text" class="form-control" id="role" name="role" aria-describedby="emailHelp" placeholder="role" value="{{$user->role}}" readonly="readonly">
                         </div>
-                        <a class="btn btn-primary" href="{{ route('data-pelanggan') }}" style=" color: white;">Kembali</a>
+                        <a class="btn btn-danger" href="{{ route('data-pelanggan') }}" style=" color: white;">Kembali</a>
                     </form>
 
                 </div>

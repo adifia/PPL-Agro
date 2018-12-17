@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
-<div class="container">
+@section('tableA')
 
-    <div class="row">
-        <div class="col-md-3">
+
+<div class="row">
+        {{-- <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action">
                     Data User
@@ -13,10 +13,9 @@
                 <a href="{{ route('data-pesanan') }}" class="list-group-item list-group-item-action">Pesanan</a>
 
             </div>
-        </div>
-        <div class="col-md-9">
+        </div> --}}
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Stok</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -42,13 +41,13 @@
                                 <td>{{$s->keterangan}}</td>
                                 <td>{{$s->harga}}</td>
                                 <td>{{$s->jumlah}}</td>
-                                <td><a class="btn btn-primary" href="{{ route('edit-stok', $s->id) }}" style=" color: white;">Edit</a></td>
+                                <td><a class="btn btn-success" href="{{ route('edit-stok', $s->id) }}" style=" color: white;">Edit</a></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                     @if(count($stok) < 3)
-                    <a class="btn btn-primary" href="{{ route('tambah-stok') }}" style=" color: white;">Tambah Stok</a>    
+                    <a class="btn btn-danger" href="{{ route('tambah-stok') }}" style=" color: white;">Tambah Stok</a><br><br><br>    
                     @endif
                     
                     {{-- <div style="float: right;">
@@ -59,5 +58,5 @@
         </div>
     </div>
 </div>
-</div>
+
 @endsection

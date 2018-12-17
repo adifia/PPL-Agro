@@ -11,9 +11,12 @@ class PelangganController extends Controller
 {
     public function index()
     {
-    	$user = User::where('role', '=', 'pelanggan')->paginate(5);
+    	$user = User::where('role', '=', 'pelanggan')->orderBy('created_at', 'desc')->paginate(5);
     	return view('adminDataPelanggan', [
-    		'user' => $user
+    		'user' => $user,
+            'active' => 'pelanggan',
+            'title' => 'Data Pelanggan',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
         ]);
     }
 
@@ -21,7 +24,10 @@ class PelangganController extends Controller
     {
     	$user = User::find($id);
     	return view('adminDetailUser', [
-    		'user' => $user
+    		'user' => $user,
+            'active' => 'pelanggan',
+            'title' => 'Detail Pelanggan',
+            'keterangan' => 'Sistem Informasi Pemesanan Ikan Lele'
     	]);
     }
 

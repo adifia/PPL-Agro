@@ -1,93 +1,79 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.admin.homeAwal')
 
-        <title>{{config('app.name')}}</title>
+@section('tableA')
+{{-- <a class="button" href="{{ route('home-pelanggan') }}">Akun</a> --}}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+<div class="clear"></div>
+<div class="main-menu-area mg-tb-40">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+   <div class="container-fluid" style="margin-top: -20px;">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
 
-            .full-height {
-                height: 100vh;
-            }
+      <div class="carousel-inner" style="height: auto;">
+          <div class="item active">
+            <img src="{{ asset('template/img/logo/Banner1.png') }}" alt="bg1">
+        </div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        <div class="item">
+          <img src="{{ asset('template/img/logo/Banner3.png') }}" alt="bg2">
+      </div>
 
-            .position-ref {
-                position: relative;
-            }
+      <div class="item">
+          <img src="{{ asset('template/img/logo/Banner2.png') }}" alt="bg3">
+      </div>
+  </div>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 
-            .content {
-                text-align: center;
-            }
+<div id="ketiga">
+    <div class="konten">
 
-            .title {
-                font-size: 84px;
-            }
+    </div>
+</div>
+</div>
+</div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('masuk') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    {{config('app.name')}}
-                </div>
-
-                <div class="links">
-                    {{-- <a href="{{route('mahasiswa.index')}}">Data Mahasiswa</a> --}}
-                </div>
+<div class="sale-statistic-area">
+    <div class="container">
+        <div class="col-xs-12" style="text-align: center;">
+            <div id="kedua">
+                <h4><img src=" " style="margin-right: 20px; padding-left: 2px;">Pemilik usaha Slamet Riyadi</h4>
+                <div class="box_sd"><p style="text-align: center; margin-left: 50px;">Usaha ini merupakan usaha penjualan ikan lele Rambigundam yang ada di rambipuji jember. Dan sistem ini adalah untuk meningkatkan penjualan ikan lele dan meningkatkan efektivitas karyawan. Juga berdampak pada peningkatan penjualan dan efisiensi waktu dalam pemesanan ikan. Memudahkan pelanggan dalam melihat jumlah stok ikan yang ada. Sehingga menghindari kemungkinan kelebihan pesanan yang dapat mengurangi kadar kepercayaan pelanggan terhadap Penjual.</p></div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+
+
+<div class="container" style="text-align: center; margin-top: 20px;">
+
+    <h2 style="margin-bottom: 20px;">Informasi lebih lanjut silahkan hubungi kami</h2>
+
+    <div class="col-xs-4">
+      <h4><img src="{{ asset('template/img/logo/contact_1.png') }}" style="margin-right: 20px; padding-left: 20px;">Telepon</h4>
+      <div class="box_sd"><p style="text-align: left; margin-left: 50px;"></p>089766543221</div>
+  </div>
+  <div class="col-xs-4">
+      <h4><img src="{{ asset('template/img/logo/contact_2.png') }}" style="margin-right: 20px; padding-left: 20px;">E-mail</h4>
+      <div class="box_sd"><a href=""><p style="text-align: center; margin-left: 50px;">sepik@gmail.com</p></a></div>
+  </div>
+  <div class="col-xs-4">
+      <h4><img src="{{ asset('template/img/logo/contact_1.png') }}" style="margin-right: 20px; padding-left: 20px;">Facebook</h4>
+      <div class="box_sd"><a href=""><p style="text-align: center; margin-left: 50px;">sepik21@facebook.com</p></a></div>
+  </div>
+</div>
+@endsection

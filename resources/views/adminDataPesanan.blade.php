@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin.mainAdmin')
 
-@section('content')
-<div class="container">
+@section('tableA')
 
-    <div class="row">
-        <div class="col-md-3">
+<div class="row">
+       {{--  <div class="col-md-3">
             <div class="list-group">
                 <a href="{{ route('data-pelanggan') }}" class="list-group-item list-group-item-action">
                     Data User
@@ -13,10 +12,10 @@
                 <a href="{{ route('data-pesanan') }}" class="list-group-item list-group-item-action active">Pesanan</a>
 
             </div>
-        </div>
-        <div class="col-md-9">
+        </div> --}}
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pesanan</div>
+                {{-- <div class="card-header">Data Pesanan</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -66,7 +65,7 @@
                                         <span class="badge badge-danger">{{$pes->status}}</span>
                                         <p>{{$pes->alasan}}</p>
                                         @endif
-                                        </td>
+                                    </td>
                                     <td>
                                         @if ($pes->bukti_pembayaran)
                                         <a href="{{$pes->bukti_pembayaran}}" target="_blank">Lihat</a> 
@@ -79,20 +78,22 @@
                                         <a class="btn btn-danger" href="{{ route('alasan-tolak', $pes->id) }}">Tolak Pesanan</a>
                                         @elseif($pes->status == 'Diverifikasi' && !empty($pes->bukti_pembayaran))
                                         <a class="btn btn-success" href="{{ route('verif2', $pes->id) }}">Verifikasi Pembayaran</a>
-                                        <a class="btn btn-dark" href="{{ route('alasan', $pes->id) }}">Batalkan</a>
+                                        <a class="btn btn-danger" href="{{ route('alasan', $pes->id) }}">Batalkan</a>
                                         @elseif($pes->status == 'Dalam pengiriman')
-                                        <a class="btn btn-dark" href="{{ route('alasan', $pes->id) }}">Batalkan</a>
+                                        <a class="btn btn-danger" href="{{ route('alasan', $pes->id) }}">Batalkan</a>
                                         @endif
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        <div style="float: right;">
+                            {{$pesanan->links()}}
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection
